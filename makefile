@@ -8,3 +8,6 @@ clean:
 %: ./src/%.c
 	@gcc -Wall -o ./exe/$@ $<
 	@./exe/$@
+
+supple:
+	@gcc -Wall -o ./exe/bit_manip ./supp/bit_manip.c

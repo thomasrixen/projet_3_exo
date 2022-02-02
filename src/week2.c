@@ -19,7 +19,17 @@ void format_str(char *buffer, unsigned int d, char *name, char initial) {
 }
 
 char* strcat(char* dest, const char* src) {
-    char temp[100];
+
+    int i = 0;
+    while (*(dest+i) != '\0'){
+        i++;
+    }
+    int j = 0;
+    while (*(src+j) != '\0'){
+        *(dest+i+j) = *(src+j);
+        j++;
+    }
+    *(dest+i+j) = '\0';
     return dest;
 }
 
@@ -110,10 +120,5 @@ void swap2(struct fract_t *a, struct fract_t *b){
 
 int main(int argc, char const *argv[])
 {
-    struct fract_t a = {1,2};
-    struct fract_t b = {3,4};
-    swap2(&a,&b);
-    printf("%d %d\n", a.num, a.denum);
-    printf("%d %d\n", b.num, b.denum);
     return 0;
 }
