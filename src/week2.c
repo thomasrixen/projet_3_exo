@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <CUnit.h>
 
 /* print_digit
  * @n: an integer

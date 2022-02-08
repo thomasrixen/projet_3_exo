@@ -1,3 +1,7 @@
+CC=gcc
+CCARGS=-Wall -o
+CCTEST=-I$(HOME)/local/include
+
 build:
 	@gcc -Wall bit.c -o prog
 	@./prog
