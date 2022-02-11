@@ -2,6 +2,12 @@
 
 This repository contains solutions to exercices provided by the course LEPL1503 - Projet 3 @ UCLouvain
 
+I do *NOT* recommend to use these solutions only to clear the exercices.
+
+These solutions are only provided to unlock you if you're really blocked in an exercice and you don't see how to solve it.
+
+You should always try the exercices by yourself and understand how the code works instead of just copying the answers, this is your responsability as a student, not mine.
+
 # Compilation : 
 
 To compile a C code into an executable :
