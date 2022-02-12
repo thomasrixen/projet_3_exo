@@ -1,6 +1,7 @@
 CC=gcc
-CCARGS=-Wall -o
+CCARGS= -Wall -o 
 CCTEST=-I$(HOME)/local/include
+THREADS = -lpthread
 
 build:
 	@gcc -Wall bit.c -o prog
@@ -10,7 +11,7 @@ clean:
 	@rm -f ./exe/*
 
 %: ./src/%.c
-	@gcc -Wall -o ./exe/$@ $<
+	@gcc -Wall -o ./exe/$@ $< $(THREADS)
 	@./exe/$@
 
 supple:
