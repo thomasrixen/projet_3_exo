@@ -69,7 +69,7 @@ ex : make week2    // create the executable week2 from src/week2.c
 |[S6] Sort my points|[week6.c](https://github.com/Aperence/projet_3_exo/blob/master/src/week6.c)
 |[S6] Protect the variable|[week6.c](https://github.com/Aperence/projet_3_exo/blob/master/src/week6.c)
 |[S6] Do my work|[week6.c](https://github.com/Aperence/projet_3_exo/blob/master/src/week6.c)
-|[S6] Shared ressource|...
+|[S6] Shared ressource|[week6.c](https://github.com/Aperence/projet_3_exo/blob/master/src/week6.c)
 |[SS2] Bitwise operation: high order bits|[bit_manip.c](https://github.com/Aperence/projet_3_exo/blob/master/supp/bit_manip.c)
 |[SS2] Bitwise operation: extract low order bits|[bit_manip.c](https://github.com/Aperence/projet_3_exo/blob/master/supp/bit_manip.c)
 |[SS2] Bitwise operation: setting a bit|[bit_manip.c](https://github.com/Aperence/projet_3_exo/blob/master/supp/bit_manip.c)
