@@ -38,8 +38,7 @@ ex : make week2    // create the executable week2 from src/week2.c
 # Exercices solutions
 
 <div style="margin-left: auto;
-            margin-right: auto;
-            width: 30%">
+            margin-right: auto;">
 
 |Exercice   | Solution_File|
 |:---------|:---------:|
