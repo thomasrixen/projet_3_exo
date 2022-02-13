@@ -219,6 +219,67 @@ int doMyWork(void* long_computing(void*), void* backup_computing(void*), char* s
     return *((int*) ret);
 }
 
+typedef struct data {
+    int longitude;
+    int latitude;
+    float avg_temp;
+} data_t;
+
+
+int put(data_t** buf, int len, int* first, int* last, int* in, data_t* d){
+    /*
+    * Function used to put a new value in the shared buffer.
+    *
+    * @buf : the shared buffer to fill in with the adresses pointing to the data_t's
+    * @len : the length of the shared buffer
+    * @first : the pointer to the array index where you can find the first inserted element that's still in the buffer
+    *         (or more exactly the pointer to the first element, **if any**)
+    * @last : the pointer to the array index where you can find the first empty space in the buffer
+    *         (or more exactly the first NULL pointer in the array, **if any**)
+    * @in : the number of data_t* pointers in the buffer
+    * @d : the data_t* that has to be inserted in the buffer
+    *
+    * @return 0 if no error, -1 otherwise
+    */
+    if (*in>=len){
+        return -1;
+    }
+    (*in)++;
+    *((buf)+*last) = d;
+    (*last)++;
+    if (*last>=len){
+        *last = 0;
+    }
+    return 0;
+}
+
+
+data_t* get(data_t** buf, int len, int* first, int* last, int* in){
+    /*
+    * Function used to get a value from the shared buffer.
+    *
+    * @buf : the shared buffer to fill out
+    * @len : the length of the shared buffer
+    * @first : the pointer to the array index where you can find the first element inserted that's still in the buffer
+    *         (or more exactly the pointer to the first element, **if any**)
+    * @last : the pointer to the array index where you can find the first empty space in the buffer
+    *         (or more exactly the first NULL pointer in the array, **if any**)
+    * @in : the number of data_t* pointers in the buffer
+    *
+    * @return the pointer to the element that you get if no error, NULL otherwise
+    */
+    if (*in == 0){
+        return NULL;
+    }
+    data_t* ret = *(buf + *first);
+    (*first)++;
+    if (*first>=len){
+        *first = 0;
+    }
+    (*in)--;
+    return ret;
+}
+
 int main(int argc, char const *argv[])
 {
     /* Example exercice 1
@@ -237,6 +298,35 @@ int main(int argc, char const *argv[])
     pthread_join(t2, NULL);
     printf("%d\n", global);
     pthread_mutex_destroy(&mu);
+    */
+
+    /* Example exercice 4
+    data_t **a = malloc(6*sizeof(data_t));
+    int first = 0;
+    int last = 0;
+    int in = 0;
+    data_t d = {1,2,3};
+    put(a, 5, &first, &last, &in, &d);
+    printf("%d, %d, %d\n", first, last, in);
+    put(a, 5, &first, &last, &in, &d);
+    printf("%d, %d, %d\n", first, last, in);
+    put(a, 5, &first, &last, &in, &d);
+    printf("%d, %d, %d\n", first, last, in);
+    put(a, 5, &first, &last, &in, &d);
+    printf("%d, %d, %d\n", first, last, in);
+    put(a, 5, &first, &last, &in, &d);
+    printf("%d, %d, %d\n", first, last, in);
+    get(a, 5, &first, &last, &in);
+    printf("%d, %d, %d\n", first, last, in);
+    put(a, 5, &first, &last, &in, &d);
+    printf("%d, %d, %d\n", first, last, in);
+    get(a, 5, &first, &last, &in);
+    printf("%d, %d, %d\n", first, last, in);
+    get(a, 5, &first, &last, &in);
+    printf("%d, %d, %d\n", first, last, in);
+    put(a, 5, &first, &last, &in, &d);
+    printf("%d, %d, %d\n", first, last, in);
+    free(a);
     */
     return 0;
 }
