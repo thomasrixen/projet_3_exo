@@ -37,6 +37,9 @@ ex : make week2    // create the executable week2 from src/week2.c
 
 # Exercices solutions
 
+<div style="margin-left: auto;
+            margin-right: auto;
+            width: 30%">
 
 |Exercice   | Solution_File|
 |:---------|:---------:|
@@ -79,3 +82,5 @@ ex : make week2    // create the executable week2 from src/week2.c
 |[SS2] Bitwise operation: counting set bits|[bit_manip.c](https://github.com/Aperence/projet_3_exo/blob/master/supp/bit_manip.c)
 |[SS2] Bitwise operation: resetting the highest order bit|[bit_manip.c](https://github.com/Aperence/projet_3_exo/blob/master/supp/bit_manip.c)
 |[SS] Décomposition d'un programme en modules - Makefile|[makefile_exercice](https://github.com/Aperence/projet_3_exo/tree/master/makefile_exercice)
+
+ </div>
