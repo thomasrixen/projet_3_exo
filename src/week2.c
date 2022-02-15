@@ -16,7 +16,7 @@ void print_foo() {
 }
 
 void format_str(char *buffer, unsigned int d, char *name, char initial) {
-    sprintf(buffer, "Mister %s %c has %d eggs", name, initial, d);
+    sprintf(buffer, "Mister %s %c. has %d eggs", name, initial, d);
 }
 
 char* strcat(char* dest, const char* src) {
